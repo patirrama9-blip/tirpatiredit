@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tirpatir — words, but make them feel.</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@300;400;500&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#171614;color:#eee9df;font-family:Manrope,sans-serif;
+  overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.075;z-index:20;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}
+.blob{position:fixed;width:420px;height:420px;border-radius:50%;filter:blur(90px);opacity:.12;z-index:-1}
+.b1{background:#d4b68a;top:-160px;left:-130px}
+.b2{background:#78939a;right:-180px;bottom:-130px}
+nav{height:78px;padding:0 7vw;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"DM Serif Display",serif;font-size:25px;letter-spacing:.02em}
+.navlinks{display:flex;gap:28px;font-size:12px;color:#aaa59c}
+.navlinks a{color:inherit;text-decoration:none}
+.hero{min-height:calc(100vh - 78px);display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 24px 110px}
+.hero-inner{max-width:850px}
+.eyebrow{text-transform:uppercase;letter-spacing:.28em;font-size:10px;color:#9e9a91;margin-bottom:25px}
+h1{font-family:"DM Serif Display",serif;font-size:clamp(54px,9vw,112px);font-weight:400;line-height:.94}
+h1 em{color:#c9b18b}
+.sub{max-width:520px;margin:30px auto 40px;color:#aaa69d;line-height:1.8;font-size:14px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:14px 23px;border:1px solid #5b5852;border-radius:999px;text-decoration:none;color:#f0ece4;font-size:12px;transition:.3s}
+.btn.primary{background:#e8dfd0;color:#1a1815;border-color:#e8dfd0}
+.btn:hover{transform:translateY(-3px);background:#d2c0a5;color:#171614;border-color:#d2c0a5}
+.section{padding:110px 7vw}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}
+.kicker{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#8e8a82}
+h2{font-family:"DM Serif Display",serif;font-size:clamp(38px,5vw,62px);font-weight:400}
+.section-intro{max-width:380px;color:#99958c;font-size:13px;line-height:1.8}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  min-height:390px;border:1px solid #35332f;border-radius:18px;overflow:hidden;
+  position:relative;background:linear-gradient(145deg,#2a2925,#11110f);
+}
+.card:nth-child(2){background:linear-gradient(145deg,#34312b,#171513)}
+.card:nth-child(3){background:linear-gradient(145deg,#263134,#121718)}
+.card:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,0,0,.7))}
+.card-content{position:absolute;z-index:2;bottom:25px;left:25px;right:25px}
+.card-number{font-size:10px;color:#aaa59c;margin-bottom:12px}
+.card-title{font-family:"DM Serif Display",serif;font-size:28px}
+.card-note{font-size:11px;color:#bbb5aa;margin-top:7px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.quote{font-family:"DM Serif Display",serif;font-size:clamp(35px,5vw,62px);line-height:1.03}
+.quote em{color:#c9b18b}
+.copy{color:#9e9a91;line-height:1.9;font-size:13px}
+.contact{padding:130px 7vw 100px;text-align:center;border-top:1px solid #2e2c29}
+.contact h2{max-width:700px;margin:12px auto 22px}
+.contact p{color:#918d85;font-size:13px;margin-bottom:32px}
+footer{padding:25px 7vw 35px;display:flex;justify-content:space-between;color:#716e68;font-size:10px;border-top:1px solid #2a2825}
+@media(max-width:750px){
+  .navlinks{gap:14px}.section{padding:80px 6vw}.cards{grid-template-columns:1fr}
+  .card{min-height:300px}.about{grid-template-columns:1fr;gap:35px}.section-head{display:block}.section-intro{margin-top:18px}
+}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+
+<nav>
+  <div class="logo">tirpatir.</div>
+  <div class="navlinks">
+    <a href="#work">work</a>
+    <a href="#about">about</a>
+    <a href="#request">request</a>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">visual pieces from your words</div>
+    <h1>words,<br>but make them <em>feel.</em></h1>
+    <p class="sub">Kirim kata-kata yang ingin kamu sampaikan. Aku akan mengubahnya menjadi sebuah visual kecil—dengan background, musik, dan suasana yang terasa pas.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://wa.me/6289502390697?text=Halo%20tirpatir!%20Aku%20mau%20request%20sebuah%20video%20dari%20kata-kataku." target="_blank">request now ↗</a>
+      <a class="btn" href="https://instagram.com/patirlw" target="_blank">instagram ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="section-head">
+    <div>
+      <div class="kicker">selected pieces</div>
+      <h2>little feelings.</h2>
+    </div>
+    <p class="section-intro">Beberapa contoh konsep. Nanti bagian ini bisa diganti dengan karya asli kamu.</p>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="card-content"><div class="card-number">01 / midnight</div><div class="card-title">“some feelings arrive quietly.”</div><div class="card-note">soft · lonely · late night</div></div></div>
+    <div class="card"><div class="card-content"><div class="card-number">02 / after rain</div><div class="card-title">“i hope you remember.”</div><div class="card-note">warm · nostalgic · tender</div></div></div>
+    <div class="card"><div class="card-content"><div class="card-number">03 / sunday</div><div class="card-title">“maybe tomorrow feels different.”</div><div class="card-note">calm · hopeful · slow</div></div></div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="about">
+    <div>
+      <div class="kicker">the idea</div>
+      <div class="quote">your words already have a <em>mood.</em></div>
+    </div>
+    <p class="copy">Kadang sebuah kalimat terasa terlalu besar untuk cuma dikirim sebagai chat. Di sini, kata-kata itu dibuat menjadi sesuatu yang bisa dilihat dan dirasakan—dengan visual dan musik yang mengikuti suasananya.<br><br>Send the words. I'll find the feeling.</p>
+  </div>
+</section>
+
+<section class="contact" id="request">
+  <div class="kicker">have something in mind?</div>
+  <h2>let's turn your words into something you can feel.</h2>
+  <p>Langsung kirim kata-kata atau request kamu lewat WhatsApp.</p>
+  <a class="btn primary" href="https://wa.me/6289502390697?text=Halo%20tirpatir!%20Aku%20mau%20request%20sebuah%20video%20dari%20kata-kataku." target="_blank">start a request ↗</a>
+</section>
+</main>
+
+<footer>
+  <span>© 2026 tirpatir.</span>
+  <span>words · music · feelings</span>
+</footer>
+</body>
+</html>
